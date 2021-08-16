@@ -4,10 +4,7 @@ import './GameCell.css';
 import xImage from './x.png';
 import oImage from './o.svg';
 
-class GameCell extends React.Component {
-  render() {
-    const { content, onClick, id } = this.props;
-
+function GameCell({ content, onClick, id }) {
     if (content === 1) {
       return (
         <div
@@ -50,7 +47,6 @@ class GameCell extends React.Component {
       />
     );
   }
-}
 
 GameCell.propTypes = {
   content: PropTypes.oneOf([0, 1, 2]),
@@ -61,4 +57,5 @@ GameCell.propTypes = {
 GameCell.defaultProps = {
   content: 0,
 };
+
 export default GameCell;
